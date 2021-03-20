@@ -1,0 +1,16 @@
+#!/bin/bash
+
+build() {
+    add_module "dm_verity"
+    add_binary "veritysetup"
+
+    add_runscript
+}
+
+help() {
+    cat <<HELPEOF
+This hook is for getting the dm_verity verified mapped device at boot
+HELPEOF
+}
+
+# vim set ft=sh ts=4 sw=4 et:

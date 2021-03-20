@@ -104,3 +104,15 @@ wvdial
 xfsprogs
 xl2tpd
 zsh
+
+ccid
+efitools
+git
+gnupg-pkcs11-scd
+hopenpgp-tools
+libp11
+opensc
+sbsigntools
+softhsm
+tpm2-tools
+yubikey-manager

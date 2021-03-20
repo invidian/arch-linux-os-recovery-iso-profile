@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+run_hook() {
+	cmdline="$(cat /proc/cmdline)"
+
+	datadev=$(echo $cmdline | sed 's/ /\n/g' | grep verity.datadev | cut -d= -f2)
+	hashdev=$(echo $cmdline | sed 's/ /\n/g' | grep verity.hashdev | cut -d= -f2)
+	hash=$(echo $cmdline | sed 's/ /\n/g' | grep verity.hash= | cut -d= -f2)
+
+	until veritysetup open ${datadev} verified ${hashdev} ${hash}; do sleep 1; done
+}
+
+# vim: set ft=sh ts=4 sw=4 et:
